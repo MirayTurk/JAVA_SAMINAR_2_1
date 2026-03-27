@@ -30,7 +30,7 @@ public void setId(int id) {
 }
 public void setTitle(String inputTitle) {
 	if( (inputTitle != null) && (!inputTitle.isEmpty()) 
-			&& (title.matches("[A-Z]{1}[a-z]{2,15}([ ]{1}[A-Z]{1}[a-z]{2,15})?"))) {
+			&& (inputTitle.matches("[A-Z]{1}[a-z]{3,20}"))) {
 			title = inputTitle;
 		}
 		else
@@ -39,13 +39,36 @@ public void setTitle(String inputTitle) {
 		}
 	}
 
-}
 public void setVehicleCode() {
-	
+	 VehicleCode = id + " _ " + title;
+}
+public void setPrice(float inputPrice) {
+	if(inputPrice > 0 && inputPrice <= 100000 ) {
+		price = inputPrice ;
+	}
+	else
+	{
+		price = 1;
+	}
+}
+  public void setEType(EnergyType inputEType) {
+	  if (inputEType !=null) {
+		  eType = inputEType;
+	  }
+	  else
+	  {
+		  eType= EnergyType.not_specified;
+	  }
+  }
 
-
-
-
-
-
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
 }
